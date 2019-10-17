@@ -29,8 +29,10 @@ int main() {
     b.name = "Chicago";
     b.pop = 2716000;
     struct city c;
-    c.name = "New York";
+    c.name = "Los Angeles";
     c.pop = 4000000;
 
     printf("%s\t%d\n", a.name, a.pop);
+    printf("%s\t%d\n", b.name, b.pop);
+    printf("%s\t%d\n", c.name, c.pop);
 }
