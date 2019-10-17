@@ -20,16 +20,17 @@
 // prototyping struct (name, population)
 struct city {char* name; int pop;};
 
-// creating three structs
-struct city a;
-a.name('New York');
-a.pop(8623000);
-struct city b;
-b.name('Chicago');
-b.pop(2716000);
-struct city c;
-c.name('Los Angeles');
-c.pop(4000000);
-struct city d;
+int main() {
+    // creating three structs (data: 2017)
+    struct city a;
+    a.name = "New York";
+    a.pop = 8623000;
+    struct city b;
+    b.name = "Chicago";
+    b.pop = 2716000;
+    struct city c;
+    c.name = "New York";
+    c.pop = 4000000;
 
-printf("%s %d", a.name, a.pop);
+    printf("%s\t%d\n", a.name, a.pop);
+}
