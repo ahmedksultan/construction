@@ -20,8 +20,19 @@
 // prototyping struct (name, population)
 struct city {char* name; int pop;};
 
+void printCity(struct city ex) {
+    printf("The city of %s has a population of %d.\n", ex.name, ex.pop);
+}
+
+void modifyCity(struct city* ex, char* newname, int newpop) {
+    ex->name = newname;
+    ex->pop = newpop;
+}
+
 int main() {
-    // creating three structs (data: 2017)
+    srand(time(NULL));
+
+    // creating five structs (data is from 2017)
     struct city a;
     a.name = "New York";
     a.pop = 8623000;
@@ -31,8 +42,33 @@ int main() {
     struct city c;
     c.name = "Los Angeles";
     c.pop = 4000000;
+    struct city d;
+    d.name = "Philadelphia";
+    d.pop = 1581000;
+    struct city e;
+    e.name = "Houston";
+    e.pop = 2313000;
 
-    printf("%s\t%d\n", a.name, a.pop);
-    printf("%s\t%d\n", b.name, b.pop);
-    printf("%s\t%d\n", c.name, c.pop);
+    struct city cities[]= {a, b, c, d, e};
+
+    printf("\n");
+
+    int n = 0;
+    while (n < 5) {
+        struct city cty = cities[rand() % 5];
+        printCity(cty);
+        n++;
+    }
+    
+    printf("\n");
+
+    printf("Testing the function to modify a city...\nCity before: ");
+    struct city cty2 = cities[rand() % 5];
+    printCity(cty2);
+    printf("Modifying city...\nCity after: ");
+    modifyCity(&cty2, "Boston", 685094);
+    printCity(cty2);
+
+    printf("\n");
 }
+
